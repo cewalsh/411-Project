@@ -1,0 +1,8 @@
+One of our ideas is a website where you specify what type of weather you want to 
+exprience and it finds the cheapest flight to a location meeting those weather conditions
+within a specified time period. This would allow users to find a semi cost effective way
+to get to the weather that they want. We would use a weather api to get local weather information about
+various places. We would also use an api that serves flight data so we could find the cheapest
+flights. We would also employ a database that hold user information like username and password
+as well as any other important information. This way users could have accounts. They could
+also sign in using a third party authentication. 
