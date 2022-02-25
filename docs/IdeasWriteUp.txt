@@ -1,8 +1,19 @@
 One of our ideas is a website where you specify what type of weather you want to 
 exprience and it finds the cheapest flight to a location meeting those weather conditions
-within a specified time period. This would allow users to find a semi cost effective way
-to get to the weather that they want. We would use a weather api to get local weather information about
-various places. We would also use an api that serves flight data so we could find the cheapest
-flights. We would also employ a database that hold user information like username and password
-as well as any other important information. This way users could have accounts. They could
-also sign in using a third party authentication. 
+within a specified time period. This would allow users to find a somewhat cost effective way
+to experience the weather that they want. We would use a weather API to get local weather information 
+about various locations. We would also use an API that serves flight data so we could find the 
+cheapest flights to the user's desired locations.  We would also employ a database that stores 
+user information like usernames and passwords as well as any other important information. 
+This way users could have accounts. They could also sign in using third party authentication.
+
+Our second idea is a website that assists people with grocery shopping based on recipes.
+The user can search for a recipe they want to make or input ingredients they currently have
+and get a recipe that can be made with them or requires few additional items. The app would pull
+from a recipe API to identify recipes matching the ingredients they input. Then, if any items
+need to be purchased for the recipe, the website will both locate nearby grocery stores and do
+price comparisons to find the nearest and cheapest option for each ingredient and/or the
+sum of all ingredients needed. User ingredients could be stored in a database with the ability
+to update/remove ingredients as they are changed or used up, along with usernames and passwords
+(sign-in would occur through third party authentication) in order to save each user's ingredients
+so they don't have to re-input everything each time.
