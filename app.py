@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, url_for, redirect, g, session, jsonify
-import requests
+import requests, yaml
 
 
 app = Flask(__name__)
+
+creds = yaml.safe_load(open("creds.yaml", "r"))
 
 @app.route("/", methods=["GET"])
 def index():
@@ -12,8 +14,8 @@ def index():
 def get_flights():
     url = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
-    api_key = 'T1wUhPE1GizlY8B63t4l8KEDjwedzRsD'
-    api_secret = 'YigdQi85xrUyuqt0'
+    api_key = creds['API_KEY']
+    api_secret = creds['API_SECRET']
 
     token_request = requests.post(
         'https://test.api.amadeus.com/v1/security/oauth2/token',
