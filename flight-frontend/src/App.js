@@ -8,14 +8,22 @@ const [APIData, setAPIData] = useState([])
 const [filteredResults, setFilteredResults] = useState([]);
 const [searchInput, setSearchInput] = useState('');
 useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
-        .then((response) => {
-            setAPIData(response.data);
-        })
-    // fetch("http://localhost:5000/get_flights").then(data => {
+    // axios.get(`https://jsonplaceholder.typicode.com/users`)
+    //     .then((response) => {
+    //         setAPIData(response.data);
+    //     })
+    // fetch("http://localhost:5000/get_flights", ).then(data => {
     //     setAPIData(data);
     //     console.log(data)
     //   })
+    fetch('http://localhost:5000/get_flights',{
+      'methods':'GET',
+      headers : {
+        'Content-Type':'application/json'
+      }
+    })
+    .then(response => response.json())
+    .catch(error => console.log(error))
 }, [])
 
 const searchItems = (searchValue) => {

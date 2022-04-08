@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, url_for, redirect, g, session, jsonify
 import requests, yaml
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 creds = yaml.safe_load(open("creds.yaml", "r"))
 
@@ -52,4 +54,5 @@ def get_flights():
     # print(flights.content)
 
     return flights.text
+
 
