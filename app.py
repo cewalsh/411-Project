@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, url_for, redirect, g, session, jsonify
 import requests, yaml
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 creds = yaml.safe_load(open("creds.yaml", "r"))
 
@@ -12,10 +14,15 @@ def index():
 
 @app.route("/get_flights", methods=["GET"])
 def get_flights():
-    url = "https://test.api.amadeus.com/v1/security/oauth2/token"
+
+    dept_date = str(request.args.get('dept_date'))
+    origin = str(request.args.get('origin'))
+    one_way = request.args.get('oneWay')
+    nonStop = request.args.get('nonStop')
 
     api_key = creds['API_KEY']
     api_secret = creds['API_SECRET']
+
 
     token_request = requests.post(
         'https://test.api.amadeus.com/v1/security/oauth2/token',
@@ -39,10 +46,10 @@ def get_flights():
             'Authorization': bearer 
         },
         params = {
-            'origin': 'BOS',
-            'departureDate': '2022-04-09',
-            'oneWay' : 'false',
-            'nonStop' : 'false'
+            'origin': origin,
+            'departureDate': dept_date,
+            'oneWay' : one_way,
+            'nonStop' : nonStop
         }
     )
 
@@ -52,4 +59,5 @@ def get_flights():
     # print(flights.content)
 
     return flights.text
+
 
