@@ -1,2 +1,5 @@
 The two options for our backend that we considered were Django and Flask, as those were the two programs our team was the most familiar with.
 We decided to go with Flask as one of our team members had a fair amount of previous experience in it.
+For the frontend, we decided to create the demo version of our API calls in jinja2, since one team member was familiar with it.
+However, for the final version, we plan to use REACT as it is a valuable language to learn and has many useful applications.
+Since our team is not very familiar with REACT, we each are learning what we can on our own and working together to create the frontend.
