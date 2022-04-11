@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, url_for, redirect, g, session, jsonify
 import requests, yaml
 from flask_cors import CORS
+import json
 
 
 app = Flask(__name__)
@@ -10,7 +11,7 @@ creds = yaml.safe_load(open("creds.yaml", "r"))
 
 @app.route("/", methods=["GET"])
 def index():
-    return "Hello World"
+    return render_template("index.html")
 
 @app.route("/get_flights", methods=["GET"])
 def get_flights():
@@ -19,6 +20,16 @@ def get_flights():
     origin = str(request.args.get('origin'))
     one_way = request.args.get('oneWay')
     nonStop = request.args.get('nonStop')
+
+    print(one_way)
+
+    nonStop = False if nonStop == None else True
+    one_way = False if one_way == None else True
+    
+    print(one_way)
+    print(nonStop)
+    # print("One way:" + one_way)
+    # print("nonStop:" + nonStop)
 
     api_key = creds['API_KEY']
     api_secret = creds['API_SECRET']
@@ -40,6 +51,8 @@ def get_flights():
     bearer = 'Bearer {}'.format(token)
 
 
+
+
     flights = requests.get(
         'https://test.api.amadeus.com/v1/shopping/flight-destinations',
         headers = {
@@ -53,11 +66,26 @@ def get_flights():
         }
     )
 
-    # print(flights.json)
-    print(flights.text)
+    # print(flights.json())
+    # print(type(flights.json()))
+    flights_json = flights.json()['data']
+    dests = []
+    dept_dates = []
+    prices = []
+    for flight in flights_json:
+        print(flight)
+        dests.append(flight['destination'])
+        dept_dates.append(flight['departureDate'])
+        prices.append(flight['price']['total'])
+    print(dests)
+    print(dept_dates)
+    print(prices)
+    # print(json.dumps(flights.json))
+    # print(type(json.dumps(flights.json)))
+    # # print(flights.text)
     # print(flights.status_code)
     # print(flights.content)
 
-    return flights.text
+    return render_template('results.html', dests=dests, dept_dates=dept_dates, prices=prices)
 
 

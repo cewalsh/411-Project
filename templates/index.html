@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="GET" action='/get_flights'>
+    <input type='text' id="dept_date" name='dept_date'/>
+    <label for="dept_date">Departure Date (Must be in the form YYYY-MM-DD)</label><br>
+
+
+    <input type='text' id="origin" name='origin'/>
+    <label for="origin">origin (Ex: BOS)</label><br>
+
+    <!-- <input type="checkbox" id="oneWay" name="oneWay" value="true">
+    <label for="oneWay"> oneWay</label><br> -->
+
+    <input type="checkbox" id="nonStop" name="nonStop" value="true">
+    <label for="nonStop"> non-stop</label><br>
+
+
+    <input type="submit" value="Search" name="search_submit"/>
+</form>
+
+{% endblock %}

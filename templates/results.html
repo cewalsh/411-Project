@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Dept Date</th>
+        <th>Dest</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody> 
+      {% for dest in dests %}
+        <tr>
+          <td>{{ dept_dates[  loop.index0  ] }}</td>
+          <td>{{ dests[  loop.index0  ] }}</td>
+          <td>{{ prices[  loop.index0  ] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Flight Weather Website</title>
+    <a href="/">Home</a>
+    <script src="https://kit.fontawesome.com/3a7d82a911.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Flight Weather Website</h1>
+      <hr>
+      {% block content %}{% endblock %}
+    </div>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
