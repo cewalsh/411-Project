@@ -52,8 +52,13 @@ render() {
       <div className="col-md-12">
         {this.state.isLoggedIn ? (
           <div>
-            <h1>Welcome to Weatherway, {this.state.userInfo.name}</h1>
-            <h3>where there's a weather, there is a way..</h3>
+            <table id='students1'>
+              <th>
+                <h3>Welcome to Weatherway, {this.state.userInfo.name}</h3>
+                <text>where there's a weather, there is a way..</text><br/>
+                </th>
+            </table>
+            <br/>
 
             <GoogleLogout
               clientId={data}
@@ -63,7 +68,17 @@ render() {
             <Form/>
           </div>
         ) : (
-      <div><h2>Login:</h2>
+      <div>
+            <table id='students1'>
+              <th>
+                <h3>Weatherway</h3>
+                <text>where there's a weather, there is a way..</text><br/>
+                </th>
+            </table>
+            <br/>
+            <div class="parent">
+            <div class="child"> 
+        <h2>Login:</h2>
       <GoogleLogin
       clientId={data}
       buttonText="Sign In with Google"
@@ -72,6 +87,8 @@ render() {
       isSignedIn={true}
       cookiePolicy={"single_host_origin"}
       />
+      </div>
+      </div>
       </div>
       )}
       </div>

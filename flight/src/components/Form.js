@@ -116,7 +116,8 @@ function Form() {
     <table>
     <button onClick={pastSearch} type="submit">Get past search</button>
     </table>
-    {state === 'add-trip' && <TableList APIData={APIData}/> }
+    {/* {state === 'add-trip' &&  */}
+    <TableList APIData={APIData} state={state}/>
       </div>
     </div>
     );
