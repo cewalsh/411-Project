@@ -22,10 +22,6 @@ class GoogleLoginComponent extends Component {
 }
 
 
-fetch_id() {
-    console.log(GOOGLE_CLIENT_ID)
-}
-
 // Success Handler
 responseGoogleSuccess = (response) => {
 console.log();
@@ -68,7 +64,6 @@ render() {
           </div>
         ) : (
       <div><h2>Login:</h2>
-      {this.fetch_id()}
       <GoogleLogin
       clientId={data}
       buttonText="Sign In with Google"
