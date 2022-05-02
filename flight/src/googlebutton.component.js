@@ -6,7 +6,6 @@ import './App.css'
 import GOOGLE_CLIENT_ID from './data.js'
 
 
-// const data = '951819375082-pr9aioggfaj2iakgculjpq48dets4lrs.apps.googleusercontent.com'
 const data = GOOGLE_CLIENT_ID
 
 class GoogleLoginComponent extends Component {
@@ -53,7 +52,8 @@ render() {
       <div className="col-md-12">
         {this.state.isLoggedIn ? (
           <div>
-            <h1>Welcome, {this.state.userInfo.name}</h1>
+            <h1>Welcome to Weatherway, {this.state.userInfo.name}</h1>
+            <h3>where there's a weather, there is a way..</h3>
 
             <GoogleLogout
               clientId={data}

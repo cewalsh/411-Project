@@ -47,6 +47,8 @@ function Form() {
 
       <form onSubmit={submit}>
 
+      <table>
+        <th>
       <br/><label for="dept_date">Departure Date: </label><br/>
       <input 
       type='date' 
@@ -54,8 +56,9 @@ function Form() {
       value={user.dept_date} 
       onChange={e => setUser({ ...user, dept_date: e.target.value })}
       />
-      
+      </th>
 
+      <th>
       <br/><label for="origin">origin (Ex: BOS):</label><br/>
       <input 
       type='text'
@@ -63,26 +66,28 @@ function Form() {
       value={user.origin}
       onChange={e => setUser({ ...user, origin: e.target.value })}
       />
-      
+      </th>
 
-      <br/><label for="oneWay"> oneWay: </label>
+      <th>
+      <br/><br/><label for="oneWay"> oneWay: </label>
       <input 
       type="checkbox" 
       name="oneWay" 
       value="true" 
       onChange={e => setUser({ ...user, oneWay: e.target.value })}
       />
-      
-
-      <br/><label for="nonStop"> non-stop:</label>
+      </th>
+      <th>
+      <br/><br/><label for="nonStop"> non-stop:</label>
       <input 
       type="checkbox" 
       name="nonStop" 
       value="true"
       onChange={e => setUser({ ...user, nonStop: "true" })}
       />
-      
+      </th>
 
+      <th>
       <br/><label for="temp">Minimum Temperature:</label><br/>
       <input 
       type='text'
@@ -90,19 +95,27 @@ function Form() {
       value={user.temp}
       onChange={e => setUser({ ...user, temp: e.target.value })}
       />
-      
-      <br/><label for="nonStop"> Rain?</label>
+      </th>
+
+      <th>
+      <br/><br/><label for="nonStop"> Rain?</label>
       <input 
       type="checkbox" 
       name="rain" 
       value="true"
       onChange={e => setUser({ ...user, rain: "true" })}
       />
+      </th>
       
-
-        <input type="submit" name="Sign Up" />
+      
+      <th>
+      <br/><br/><input type="submit" name="Sign Up" />
+        </th>
+        </table>
     </form>
+    <table>
     <button onClick={pastSearch} type="submit">Get past search</button>
+    </table>
     {state === 'add-trip' && <TableList APIData={APIData}/> }
       </div>
     </div>
