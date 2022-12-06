@@ -1,4 +1,4 @@
-# Weaterway
+# WeatherWay
 
 https://user-images.githubusercontent.com/46355198/205980347-04de6311-edb9-4ca8-8f9c-83160576e77c.mp4
 
