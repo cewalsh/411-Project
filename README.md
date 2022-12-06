@@ -3,11 +3,13 @@
 https://user-images.githubusercontent.com/46355198/205980347-04de6311-edb9-4ca8-8f9c-83160576e77c.mp4
 
 
+WeatherWay is a website that allows the user to input a minimum temperature and a weather specification and the user is then given the cheapest flights to locations within those parameters.
 
-WeatherWay is a website that allows the user to input a minimum temperature and a weather specification and the user is then given the cheapest flights to locations within those parameters
+The user can also elect for a one-way flight, choose a non-stop flight, input their place of departure, and insert their departure date.
 
+----------
 
-
+Backend setup
 
 0. Verify that you have python3 installed on your machine. If not, install it.
 1. Clone this project to your local machine.
